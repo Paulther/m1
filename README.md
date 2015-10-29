@@ -1,2 +1,2 @@
 # midterm1
-timing problems
+timing two different algorithims that calculate pi
