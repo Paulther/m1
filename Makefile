@@ -14,8 +14,8 @@ EDITOR = /usr/bin/vim
 INDENT = /usr/bin/indent
 
 CC        = clang
-LDFLAGS   = -O
-CFLAGS    = -Weverything -Wextra -pedantic -lm  $(LDFLAGS)
+LDFLAGS   = -O0
+CFLAGS    = -Weverything -Wextra -pedantic   $(LDFLAGS)
 
 .SUFFIXES:
 .SUFFIXES:  .c .o .h

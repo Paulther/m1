@@ -45,26 +45,44 @@ int  main(void)
     int j;
     double tmax = 2;
     double tmin = 1;
-    int count = 10000;
-   // do  
-    //{
-    for (int k = 0; k < 5; k++)
-      {   
+    int count =  1000;
+    do  
+    {
+          
           timer_start ();
           
           for ( j = 0; j < count; j++)
           {
-               pi_leibiniz(i2);
-           
+               pi_bbp(i1);          
           }
- 
+      
           time = timer_stop ();
           time1 = time /((double) count);
           printf( " %10.2f usec         %10.6f sec      %10d\n", time1 * 1.e6,                      time, count);
           count = adjust_rep_count ((int) count, time, tmin, tmax);
-       }
-   // }
-    // while ((time > tmax) || (time < tmin));
+       
+    }
+    while ((time > tmax) || (time < tmin));
+    printf("\n\n");
+
+    count =  1000;
+    do  
+    {
+          
+          timer_start ();
+          
+          for ( j = 0; j < count; j++)
+          {
+               pi_leibiniz(i2);          
+          }
+      
+          time = timer_stop ();
+          time1 = time /((double) count);
+          printf( " %10.2f usec         %10.6f sec      %10d\n", time1 * 1.e6,                      time, count);
+          count = adjust_rep_count ((int) count, time, tmin, tmax);
+       
+    }
+    while ((time > tmax) || (time < tmin));
 }
                                                        
 double pi_leibiniz (int n)
