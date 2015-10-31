@@ -14,7 +14,7 @@ EDITOR = /usr/bin/vim
 INDENT = /usr/bin/indent
 
 CC        = clang
-LDFLAGS   = -O0
+LDFLAGS   = -O
 CFLAGS    = -Weverything -Wextra -pedantic   $(LDFLAGS)
 
 .SUFFIXES:
@@ -22,9 +22,10 @@ CFLAGS    = -Weverything -Wextra -pedantic   $(LDFLAGS)
 
 .PHONY: edit clean veryclean
 
-target    = midterm1
+target    = m1
 
-$(target) : $(target).c
+$(target) : $(target).o timer.o adjust.o pi_bbp.o pi_leibiniz.o
+	$(CC) $(LDFLAGS) $^ -o $@
 
 edit : $(target).c
 	$(EDITOR) $<
